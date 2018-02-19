@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+
+</head>
+<body ng-app="myApp">
+	<div class="modal-dialog">
+		<div class="loginmodal-container" ng-controller="loginController">
+			<h1>Login to Your Account</h1>
+			<br>
+			<form name="LoginForm" ng-submit="submitLogin(LoginForm.$valid)"
+				method="post" novalidate>
+
+				<!-- EMAIL -->
+				<div class="form-group">
+					<label>Email</label> <input type="text" 
+						class="form-control" ng-model="email" placeholder="Enter Email" />
+					<p ng-show="LoginForm.email.$invalid && !LoginForm.email.$pristine"
+						class="help-block">Enter valid email</p>
+
+				</div>
+
+				<!-- Password -->
+				<div class="form-group">
+					<label>Password</label> <input type="password" name="password"
+						class="form-control" ng-model="password" placeholder="Enter Password" ng-minlength="3"
+						ng-maxlength="10" />
+					<p ng-show="LoginForm.password.$error.minlength" class="help-block">Password
+						is too short.</p>
+					<p ng-show="LoginForm.password.$error.maxlength" class="help-block">Password
+						is too long.</p>
+				</div>
+
+				<!-- SUBMIT BUTTON -->
+				<button type="submit" class="btn btn-primary"
+					ng-disabled="LoginForm.$invalid">Submit</button>
+			</form>
+			<br />
+			<div class="login-help">
+				<a href="#/addCustomer">Register</a> - <a href="#">Forgot
+					Password</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+</head>
+<body ng-app="myApp">
+	<div class="container" ng-controller="editCustomerController">
+			<div class="row main">
+				<div class="panel-heading">
+	               <div class="panel-title text-center">
+	               		<h1 class="title">Wissen Technologies</h1>
+	               		<h2 class="title">Customer Edit Form</h2>
+	               		<hr />
+	               	</div>
+	            </div> 
+				<div class="main-login main-center">
+				<form name="LoginForm" cssClass="form-horizontal" ng-submit="updateCustomer()"	method="post">					
+					
+						<div class="form-group">
+							<label for="custid" class="cols-sm-2 control-label">Customer Id</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa"></i></span>
+									<input id="custid" type="text" cssClass="form-control" ng-model="customerForm.customerId" readonly="readonly"/><br/>						
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Enter Your Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa"></i></span>
+									<input id="name" type="text" cssClass="form-control" ng-model="customerForm.customerName"/><br/>							
+									<p id="p1"/>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="mobile" class="cols-sm-2 control-label">Enter Your Mobile Number</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa"></i></span>
+									<input  id="mobile"  type="text" cssClass="form-control" ng-model="customerForm.mobile"/><br/>
+									<p id="p2"/>
+									</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="email" class="cols-sm-2 control-label">Your Email</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope fa"></i></span>
+									<input id="email" type="email" class="form-control" ng-model="customerForm.email" /><br/>
+									<p id="p3"/>
+									</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="password" class="cols-sm-2 control-label">Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg"></i></span>
+									<input ng-model="customerForm.password" type="password" class="form-control" id="password" /><br/>
+									<p id="p4"/>
+								</div>
+							</div>
+						</div>						
+
+						<div class="form-group">
+							<label for="birthdate" class="cols-sm-2 control-label">Enter Birthdate</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg"></i></span>
+									<input class="form-control" type="text" ng-model="customerForm.birthdate" id="birthdate" /><br/>
+									<p id="p5"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="salesRep" class="cols-sm-2 control-label">Enter Sales Representative ID</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg"></i></span>
+									<input  type="text" class="form-control" ng-model="customerForm.salesRep" id="salesRep"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group ">
+							<input type="submit" name="edit" class="btn btn-primary btn-lg btn-block login-button" value="Edit">							
+						</div>					
+					</form>						
+								
+				</div>
+			</div>		
+				<p><h1><font color="blue">	{{message}}	</font></h1></p>			
+		</div>
+		
+</body>
+</html>
